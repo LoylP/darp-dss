@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "darp"
+version = "0.1.0"
+description = "DARP decision-support system reproduction"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy==2.4.6; python_version >= '3.11'",
+    "numpy==2.2.6; python_version < '3.11'",
+    "scipy==1.16.3",
+    "pandas==2.2.3",
+    "pyarrow",
+    "matplotlib",
+    "plotly",
+    "PyYAML",
+    "fastapi",
+    "uvicorn",
+    "pydantic>=2",
+    "streamlit",
+    "requests",
+]
+
+[project.optional-dependencies]
+test = ["pytest", "httpx"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: kiểm thử hồi quy toàn bộ dữ liệu mô phỏng"]

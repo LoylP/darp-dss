@@ -1,0 +1,36 @@
+data:
+  seed: 2024
+  start: "2017-01-01"
+  end: "2021-12-31"
+  n_brokers: 40
+  n_analysts: 350
+  n_stocks: 400
+  earnings_per_year: 4
+  p_issue: 0.33
+  sporadic_per_stock_year: 2
+  move_std: 0.15
+  skill_offset: -1.0
+  herd_prob: 0.7
+  year_shock:
+    2017: 0.0
+    2018: 0.1
+    2019: 0.0
+    2020: -0.3
+    2021: -0.9
+eval:
+  TP: 1
+  OB: 14
+  PD: 1
+  min_recs: 3
+model:
+  knn: 30
+  coverage_lookback_months: 12
+  max_iter: 30
+  tol: 1.0e-6
+  ridge: 1.0e-6
+experiment:
+  fast: true
+  sensitivity:
+    TP: [1, 2, 3]
+    OB: [7, 14, 30]
+    PD: [1, 3, 5]

@@ -1,0 +1,15 @@
+numpy==2.4.6; python_version >= "3.11"
+numpy==2.2.6; python_version < "3.11"
+scipy==1.16.3
+pandas==2.2.3
+pyarrow
+matplotlib
+plotly
+PyYAML
+fastapi
+uvicorn
+pydantic>=2
+streamlit
+requests
+pytest
+httpx
