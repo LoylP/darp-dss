@@ -1,0 +1,355 @@
+{
+  "config": {
+    "seed": 2024,
+    "start": "2017-01-01",
+    "end": "2021-12-31",
+    "n_brokers": 40,
+    "n_analysts": 350,
+    "n_stocks": 400,
+    "earnings_per_year": 4,
+    "p_issue": 0.33,
+    "sporadic_per_stock_year": 2,
+    "move_std": 0.15,
+    "skill_offset": -1.0,
+    "herd_prob": 0.7,
+    "TP": 1,
+    "OB": 14,
+    "PD": 1,
+    "min_recs": 3,
+    "knn": 30,
+    "coverage_lookback_months": 12,
+    "max_iter": 30,
+    "tol": 1e-06
+  },
+  "n_test_events": 15102,
+  "ACC_overall": {
+    "MV": 0.635,
+    "WM": 0.6562,
+    "DARP": 0.6688
+  },
+  "ACC_CI95": {
+    "MV": [
+      0.6259,
+      0.6452
+    ],
+    "WM": [
+      0.6469,
+      0.6646
+    ],
+    "DARP": [
+      0.6597,
+      0.6767
+    ]
+  },
+  "ACC_by_year": {
+    "MV": {
+      "2017": 0.6687,
+      "2018": 0.6874,
+      "2019": 0.6811,
+      "2020": 0.6079,
+      "2021": 0.4936
+    },
+    "WM": {
+      "2017": 0.6826,
+      "2018": 0.6993,
+      "2019": 0.6918,
+      "2020": 0.6194,
+      "2021": 0.5683
+    },
+    "DARP": {
+      "2017": 0.6968,
+      "2018": 0.7191,
+      "2019": 0.699,
+      "2020": 0.6353,
+      "2021": 0.5756
+    }
+  },
+  "eta_mean": {
+    "f1": 2.804,
+    "f2": 2.213,
+    "f3": 1.383,
+    "f4": 1.516,
+    "f5": 1.635,
+    "f6": 1.817
+  },
+  "fig7_topk": {
+    "MV": 0.635,
+    "WM": 0.6562,
+    "DARP_T5": 0.6539,
+    "DARP_T3": 0.6634,
+    "DARP": 0.6688
+  },
+  "fig8_ablation": {
+    "DARP": 0.6688,
+    "-f1": 0.6576,
+    "-f2": 0.6538,
+    "-f3": 0.6745,
+    "-f4": 0.6752,
+    "-f5": 0.6701,
+    "-f6": 0.6665,
+    "DARP_C": 0.6356,
+    "MV": 0.635,
+    "WM": 0.6562
+  },
+  "fig9_sensitivity": [
+    {
+      "param": "TP",
+      "value": 1,
+      "MV": 0.6126,
+      "WM": 0.6522,
+      "DARP": 0.6645
+    },
+    {
+      "param": "TP",
+      "value": 2,
+      "MV": 0.6161,
+      "WM": 0.6581,
+      "DARP": 0.6531
+    },
+    {
+      "param": "TP",
+      "value": 3,
+      "MV": 0.6215,
+      "WM": 0.6651,
+      "DARP": 0.6601
+    },
+    {
+      "param": "OB",
+      "value": 7,
+      "MV": 0.6194,
+      "WM": 0.6559,
+      "DARP": 0.6552
+    },
+    {
+      "param": "OB",
+      "value": 14,
+      "MV": 0.6126,
+      "WM": 0.6522,
+      "DARP": 0.6645
+    },
+    {
+      "param": "OB",
+      "value": 30,
+      "MV": 0.5911,
+      "WM": 0.6282,
+      "DARP": 0.6204
+    },
+    {
+      "param": "PD",
+      "value": 1,
+      "MV": 0.6126,
+      "WM": 0.6522,
+      "DARP": 0.6645
+    },
+    {
+      "param": "PD",
+      "value": 3,
+      "MV": 0.4908,
+      "WM": 0.542,
+      "DARP": 0.5529
+    },
+    {
+      "param": "PD",
+      "value": 5,
+      "MV": 0.4693,
+      "WM": 0.5117,
+      "DARP": 0.5121
+    }
+  ],
+  "reliability_by_year": {
+    "2017": 0.0546,
+    "2018": 0.0612,
+    "2019": 0.0554,
+    "2020": 0.0344,
+    "2021": 0.0109
+  },
+  "spearman_c_vs_true_q": 0.2055,
+  "acc_by_sector": {
+    "MV": {
+      "Wholesale": 0.7695,
+      "Services": 0.6859,
+      "Retail": 0.6055,
+      "Construction": 0.6403,
+      "Finance & Real Estate": 0.6523,
+      "Transportation & Utilities": 0.518,
+      "Mining": 0.5766,
+      "Manufacturing": 0.6336
+    },
+    "WM": {
+      "Wholesale": 0.7119,
+      "Services": 0.7019,
+      "Retail": 0.6001,
+      "Construction": 0.717,
+      "Finance & Real Estate": 0.6707,
+      "Transportation & Utilities": 0.5854,
+      "Mining": 0.6359,
+      "Manufacturing": 0.6394
+    },
+    "DARP": {
+      "Wholesale": 0.7463,
+      "Services": 0.6935,
+      "Retail": 0.6845,
+      "Construction": 0.6838,
+      "Finance & Real Estate": 0.6588,
+      "Transportation & Utilities": 0.6463,
+      "Mining": 0.6446,
+      "Manufacturing": 0.6393
+    },
+    "n": {
+      "Wholesale": 1109,
+      "Services": 2386,
+      "Retail": 1414,
+      "Construction": 1380,
+      "Finance & Real Estate": 2099,
+      "Transportation & Utilities": 2034,
+      "Mining": 1252,
+      "Manufacturing": 3428
+    }
+  },
+  "acc_by_nrecs": {
+    "MV": {
+      "3": 0.6334,
+      "4": 0.6439,
+      "5": 0.6294,
+      "6": 0.6349,
+      "7+": 0.632
+    },
+    "WM": {
+      "3": 0.6419,
+      "4": 0.6503,
+      "5": 0.6635,
+      "6": 0.6604,
+      "7+": 0.6732
+    },
+    "DARP": {
+      "3": 0.6469,
+      "4": 0.6639,
+      "5": 0.6735,
+      "6": 0.6775,
+      "7+": 0.6942
+    },
+    "n": {
+      "3": 4267,
+      "4": 3473,
+      "5": 2629,
+      "6": 1766,
+      "7+": 2967
+    }
+  },
+  "reliability_by_sector": {
+    "mean": {
+      "Wholesale": 0.0688,
+      "Services": 0.0575,
+      "Finance & Real Estate": 0.0508,
+      "Manufacturing": 0.0504,
+      "Retail": 0.039,
+      "Construction": 0.0352,
+      "Mining": 0.029,
+      "Transportation & Utilities": 0.0187
+    },
+    "std": {
+      "Wholesale": 0.094,
+      "Services": 0.106,
+      "Finance & Real Estate": 0.0978,
+      "Manufacturing": 0.095,
+      "Retail": 0.0989,
+      "Construction": 0.0978,
+      "Mining": 0.082,
+      "Transportation & Utilities": 0.104
+    },
+    "count": {
+      "Wholesale": 6579,
+      "Services": 11749,
+      "Finance & Real Estate": 9218,
+      "Manufacturing": 14446,
+      "Retail": 6115,
+      "Construction": 8885,
+      "Mining": 6870,
+      "Transportation & Utilities": 11726
+    }
+  },
+  "reliability_heatmap": {
+    "2017": {
+      "Construction": 0.0447,
+      "Finance & Real Estate": 0.0507,
+      "Manufacturing": 0.054,
+      "Mining": 0.0284,
+      "Retail": 0.0792,
+      "Services": 0.0701,
+      "Transportation & Utilities": 0.0489,
+      "Wholesale": 0.0742
+    },
+    "2018": {
+      "Construction": 0.0482,
+      "Finance & Real Estate": 0.0851,
+      "Manufacturing": 0.0723,
+      "Mining": 0.0323,
+      "Retail": 0.0343,
+      "Services": 0.0824,
+      "Transportation & Utilities": 0.0331,
+      "Wholesale": 0.0816
+    },
+    "2019": {
+      "Construction": 0.0371,
+      "Finance & Real Estate": 0.0626,
+      "Manufacturing": 0.0734,
+      "Mining": 0.0526,
+      "Retail": 0.0473,
+      "Services": 0.0507,
+      "Transportation & Utilities": 0.0247,
+      "Wholesale": 0.0975
+    },
+    "2020": {
+      "Construction": 0.0352,
+      "Finance & Real Estate": 0.0457,
+      "Manufacturing": 0.0429,
+      "Mining": 0.0177,
+      "Retail": 0.034,
+      "Services": 0.0566,
+      "Transportation & Utilities": -0.0063,
+      "Wholesale": 0.0594
+    },
+    "2021": {
+      "Construction": 0.0067,
+      "Finance & Real Estate": -0.0013,
+      "Manufacturing": 0.0056,
+      "Mining": 0.0155,
+      "Retail": 0.0053,
+      "Services": 0.0263,
+      "Transportation & Utilities": -0.001,
+      "Wholesale": 0.0337
+    }
+  },
+  "reliability_quintiles": {
+    "c_mean": {
+      "Q1 (thấp)": -0.0722,
+      "Q2": -0.0014,
+      "Q3": 0.0294,
+      "Q4": 0.0725,
+      "Q5 (cao)": 0.1894
+    },
+    "true_q": {
+      "Q1 (thấp)": 0.3088,
+      "Q2": 0.338,
+      "Q3": 0.3657,
+      "Q4": 0.3957,
+      "Q5 (cao)": 0.4251
+    },
+    "ty_le_dung": {
+      "Q1 (thấp)": 0.3658,
+      "Q2": 0.3674,
+      "Q3": 0.3861,
+      "Q4": 0.4193,
+      "Q5 (cao)": 0.4585
+    }
+  },
+  "toy_example": {
+    "c": {
+      "a1": 0.3623177314745109,
+      "a2": -0.07495873802257481,
+      "a3": -0.05817790314378443
+    },
+    "MV": 2,
+    "DARP": 4
+  }
+}
